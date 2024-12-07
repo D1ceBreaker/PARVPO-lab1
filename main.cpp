@@ -2,7 +2,7 @@
 #include <omp.h>
 #include <vector>
 #include <random>
-
+#include <climits>
 
 using std::vector, std::cin, std::cout;
 
