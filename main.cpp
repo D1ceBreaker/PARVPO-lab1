@@ -3,6 +3,7 @@
 #include <vector>
 #include <random>
 #include <climits>
+#include <fstream>
 
 using std::vector, std::cin, std::cout;
 
@@ -50,6 +51,8 @@ int main(){
     auto vec = generate_random(100000000);
     shellSortParallel(vec, omp_get_num_procs());
     auto t1 = omp_get_wtime();
-    cout << t1 - t0 << " seconds\n";
+    std::ofstream outfile("./time.txt");
+    outfile << t1 - t0 << " seconds\n";
+    outfile.close();
     return 0;
 }
